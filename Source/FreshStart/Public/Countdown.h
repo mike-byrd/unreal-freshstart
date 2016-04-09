@@ -11,6 +11,8 @@ class FRESHSTART_API ACountdown : public AActor
 	GENERATED_BODY()
 
 public:
+	//How long, in seconds, the countdown will run
+	UPROPERTY(EditAnywhere)
 	int32 countdownTime;
 	FTimerHandle countdownTimerHandle;
 	UTextRenderComponent* countdownText;
@@ -26,6 +28,8 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 	void UpdateTimerDisplay();
 	void AdvanceTimer();
+
+	UFUNCTION(BlueprintNativeEvent)
 	void CountDownHasFinished();	
-	
+	virtual void CountDownHasFinished_Implementation();
 };

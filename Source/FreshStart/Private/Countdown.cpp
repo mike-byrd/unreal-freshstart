@@ -3,6 +3,7 @@
 #include "FreshStart.h"
 #include "Countdown.h"
 
+#define LOCTEXT_NAMESPACE "FreshStart";
 
 // Sets default values
 ACountdown::ACountdown()
@@ -35,7 +36,8 @@ void ACountdown::Tick( float DeltaTime )
 
 void ACountdown::UpdateTimerDisplay()
 {
-	countdownText->SetText(FString::FromInt(FMath::Max(countdownTime, 0)));
+	//countdownText->SetText(FString::FromInt(FMath::Max(countdownTime, 0)));
+	countdownText->SetText(FText::AsNumber(FMath::Max(countdownTime, 0)));
 }
 
 void ACountdown::AdvanceTimer()
@@ -50,9 +52,9 @@ void ACountdown::AdvanceTimer()
 	}
 }
 
-void ACountdown::CountDownHasFinished()
+void ACountdown::CountDownHasFinished_Implementation()
 {
 	//Change to a special readout
-	countdownText->SetText("GO!");
+	countdownText->SetText(FText::FromString("GO!"));
 }
 
