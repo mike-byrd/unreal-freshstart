@@ -48,11 +48,11 @@ void ACountdown::AdvanceTimer()
 	{
 		//done counting
 		GetWorldTimerManager().ClearTimer(countdownTimerHandle);
-		CountDownHasFinished();
+		CountdownHasFinished();
 	}
 }
 
-void ACountdown::CountDownHasFinished_Implementation()
+void ACountdown::CountdownHasFinished_Implementation()
 {
 	//Change to a special readout
 	countdownText->SetText(FText::FromString("GO!"));

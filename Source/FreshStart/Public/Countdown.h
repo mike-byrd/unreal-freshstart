@@ -30,6 +30,6 @@ public:
 	void AdvanceTimer();
 
 	UFUNCTION(BlueprintNativeEvent)
-	void CountDownHasFinished();	
-	virtual void CountDownHasFinished_Implementation();
+	void CountdownHasFinished();
+	virtual void CountdownHasFinished_Implementation();
 };
